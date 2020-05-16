@@ -33,12 +33,11 @@ class UserInputsController
             $this->action = $_GET['action'];
 
             switch ($this->action) {
-                case 'listTypes' :
+                case 'listTypes' :     //////////////////////////// CASE LIST TYPES /////////////////////////////////////////
                     echo "case: listTypes\n";
                     echo "\n";
                     echo '--';
-                    echo "\n";
-                    echo "\n";
+                    echo "\n\n";
 
 //            foreach ($db->connect()->query("SELECT id, name FROM  product_types ORDER BY name") as $item){
                     foreach ($db->connect()->query($sql)->fetchAll(PDO::FETCH_ASSOC) as $item) {
@@ -78,14 +77,24 @@ class UserInputsController
                     break;
 
 
-                case 'listProductsByTypeId' :
+                case 'listProductsByTypeId' : ///////////////////////////////// CASE LIST PRODUCTS BY TYPE ID ////////////////
                     echo "case: listProductTypesId\n";
                     echo "\n";
                     echo '--';
-                    echo "\n";
-                    echo "\n";
+                    echo "\n\n";
 
-                    foreach ($db->connect()->query($sql2)->fetchAll(PDO::FETCH_ASSOC) as $item) {
+
+                    $typeId = filter_input(INPUT_GET, "typeId", FILTER_SANITIZE_STRING);
+
+                    print_r($typeId); // TEST
+                    echo "\n\n";
+
+                    $sqlID = $typeId;
+                    $sql3 = "SELECT t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = $sqlID";
+
+
+
+                    foreach ($db->connect()->query($sql3)->fetchAll(PDO::FETCH_ASSOC) as $item) {
                         array_push($this->arrayListProducts, $item);
                     }
                     print_r($this->arrayListProducts);
