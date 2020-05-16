@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c7ef4d20-c273-4902-ab85-a9047a57901b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseService/DatabaseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseService/DatabaseService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/UserInputsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserInputsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/StoreProductsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/StoreProductsModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/StoreTypesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/StoreTypesModel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

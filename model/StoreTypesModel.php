@@ -3,7 +3,6 @@
 class StoreTypesModel extends DatabaseService {
 
     private $modelTypesArray = [];
-    private $typesData;
     private $sqlTypes = "SELECT id, name FROM  product_types ORDER BY name";
     private $typeModelDatabase;
 
@@ -15,6 +14,7 @@ class StoreTypesModel extends DatabaseService {
             array_push($this->modelTypesArray, $item);
 
         }
+        //print_r($this->modelTypesArray);
 
 //////////////////////////////////////////////////////////////////////////////////////////
         // down below is for TEST reason
