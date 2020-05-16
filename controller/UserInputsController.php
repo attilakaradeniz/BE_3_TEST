@@ -48,13 +48,13 @@ class UserInputsController
                     echo '--';
                     echo "\n\n";
 
-//            foreach ($db->connect()->query("SELECT id, name FROM  product_types ORDER BY name") as $item){
+
                     foreach ($db->connect()->query($sql)->fetchAll(PDO::FETCH_ASSOC) as $item) {
                         array_push($this->arrayListTypes, $item);
-                       //print_r($this->arrayListTypes);
-                    }
-                    //print_r($this->arrayListTypes[0]['name']);
 
+                    }
+
+//print_r($this->arrayListTypes);
 
 
                     //print_r($this->arrayListTypes);

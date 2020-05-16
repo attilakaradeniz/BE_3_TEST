@@ -13,7 +13,6 @@ class StoreTypesModel extends DatabaseService {
         $this->typeModelDatabase->connect();
         foreach ($this->typeModelDatabase->connect()->query($this->sqlTypes)->fetchAll(PDO::FETCH_ASSOC) as $item) {
             array_push($this->modelTypesArray, $item);
-
         }
 
 //////////////////////////////////////////////////////////////////////////////////////////
