@@ -10,7 +10,15 @@ class UserInputsController
     public function __construct()
     {
         $this->view = new JsonView();
+        $storeTypes = new StoreTypesModel();
     }
+
+
+
+
+
+
+
 
     public function route()
     {
@@ -28,44 +36,55 @@ class UserInputsController
                 case 'listTypes' :
                     echo "case: listTypes\n";
                     echo "\n";
+                    echo '--';
+                    echo "\n";
+                    echo "\n";
 
 //            foreach ($db->connect()->query("SELECT id, name FROM  product_types ORDER BY name") as $item){
                     foreach ($db->connect()->query($sql)->fetchAll(PDO::FETCH_ASSOC) as $item) {
                         array_push($this->arrayListTypes, $item);
                        //print_r($this->arrayListTypes);
                     }
-                    print_r($this->arrayListTypes[0]['name']);
+                    //print_r($this->arrayListTypes[0]['name']);
 
 
-                    break;
+
                     //print_r($this->arrayListTypes);
 
                     //print_r($this->arrayTEST[0]['productTypeName']);
 //////////////////////////////////////////////////////////////////////////////////////////
                     // down below is for TEST reason
-//                    foreach ($this->arrayListTypes as $item) {
-//                        echo "{\n";
-//                        echo "\"productType\": ";
-//                        echo "\"";
-//                        print_r($item['name']);
-//                        echo "\"";
-//                        echo ",";
-//                        echo "\n";
-//                        // here url
-//                        echo "\"url\": ";
-//                        echo "\"";
-////                        echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+                    foreach ($this->arrayListTypes as $item) {
+                        echo "{\n";
+                        echo "\"productType\": ";
+                        echo "\"";
+                        print_r($item['name']);
+                        echo "\"";
+                        echo ",";
+                        echo "\n";
+                        // here url
+                        echo "\"url\": ";
+                        echo "\"";
+//                        echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
 //                        echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-//                        echo "\",\n";
-//                        echo "}";
-//                        echo ",\n";
-//                    }
-//
-//                    echo "\n";
+                        echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                        echo "\",\n";
+                        echo "}";
+                        echo ",\n";
+                    }
+
+                    echo "\n";
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    break;
+
 
                 case 'listProductsByTypeId' :
-                    print("listbla lba lbal bla bla");
+                    echo "case: listProductTypesId\n";
+                    echo "\n";
+                    echo '--';
+                    echo "\n";
+                    echo "\n";
+
                     break;
 //                    foreach ($db->connect()->query($sql2) as $item) {
 //                        print_r($item);

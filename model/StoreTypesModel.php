@@ -3,10 +3,10 @@
 class StoreTypesModel extends DatabaseService {
 
     private $modelTypesArray = [];
-    private $sqlTypes = "";
+    private $typesData;
 
-    public function fetchTypesDataTEMP($typesData){
-        $typesData = $this->modelTypesArray;
+    public function fetchTypesData(){
+
 
     }
 
