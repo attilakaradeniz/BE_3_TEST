@@ -23,8 +23,12 @@ print_r($decoded);
 //
 //echo "\n\n output :  \n\n";
 //
-//print_r($decoded[0]->id); // prints first obj's id : "10"
-//print_r($decoded[0]->name); // prints first obj's id : "anti-aging"
+//
+echo "\n\n \$decoded[0]->id: \n\n";
+print_r($decoded[0]->id); // prints first obj's id : "10"
+
+echo "\n\n \$decoded[0]->name: \n\n";
+print_r($decoded[0]->name); // prints first obj's id : "anti-aging"
 
 //foreach ($decoded)
 

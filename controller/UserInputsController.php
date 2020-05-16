@@ -85,6 +85,11 @@ class UserInputsController
                     echo "\n";
                     echo "\n";
 
+                    foreach ($db->connect()->query($sql2)->fetchAll(PDO::FETCH_ASSOC) as $item) {
+                        array_push($this->arrayListProducts, $item);
+                    }
+                    print_r($this->arrayListProducts);
+
                     break;
 //                    foreach ($db->connect()->query($sql2) as $item) {
 //                        print_r($item);
