@@ -34,6 +34,15 @@ class UserInputsController
 
             switch ($this->action) {
                 case 'listTypes' :     //////////////////////////// CASE LIST TYPES ///////////////////////////////////////////////////////////////////////////////////
+                    ///
+                    ///
+                    ///
+
+                    $modelTypes = new StoreTypesModel();
+                    $modelTypes->fetchTypesData();
+
+
+
                     echo "case: listTypes\n";
                     echo "\n";
                     echo '--';
@@ -123,6 +132,8 @@ class UserInputsController
 //
 //
 //                    }
+                    // HATA
+
                     print_r("{");
                     print_r("\n\n\"productType\": \"" . $this->arrayListProducts[0]['productTypeName']. "\",");
                     print_r("\n\"products\": [\n");
