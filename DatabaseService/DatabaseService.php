@@ -10,6 +10,8 @@ class DatabaseService
 
     private $sqlTypes = "SELECT id, name FROM  product_types ORDER BY name";
     private $sqlProducts = "SELECT t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = 1";
+    private $sqlProductsID = "SELECT t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id =";
+    private $sqlID  = "1";
     private $resultArray = [];
 
     function __construct()
@@ -45,11 +47,21 @@ class DatabaseService
     }
 
     // fetches PRODUCTS fills in an array & returns it
-    public function fetchProductsData($data)
+    public function fetchProductsData()
     {
         //$data = $this->data;
+        $data = $this->connect()->query($this->sqlProductsID.$this->sqlID)->fetchAll();
+        $arrayToPush = [];
 
-        foreach ($this->connect()->query($this->sqlProducts) as $item){
+        foreach ($data as $item) {
+            array_push($arrayToPush, $item);
+        }
+        return $arrayToPush;
+
+
+
+
+        foreach ($this->connect()->query($this->sqlProductsID.$this->sqlID) as $item){
             array_push($this->resultArray, $item);
             return $this->resultArray;
         }
